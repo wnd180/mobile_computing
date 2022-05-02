@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/num1"
+        android:textSize="30sp"
+        android:hint="Num1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <EditText
+        android:id="@+id/num2"
+        android:textSize="30sp"
+        android:hint="Num2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <EditText
+        android:id="@+id/result"
+        android:textSize="30sp"
+        android:hint="Result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:columnCount="4"
+        android:layout_margin="5dp">
+
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/B7"
+            android:textSize="15sp"
+            android:text="7"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            >
+        </Button>
+        <Button
+            android:layout_margin="5dp"
+
+            android:id="@+id/B8"
+            android:textSize="15sp"
+            android:text="8"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:layout_margin="5dp"
+
+            android:id="@+id/B9"
+            android:textSize="15sp"
+            android:text="9"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:layout_margin="5dp"
+
+            android:id="@+id/div"
+            android:textSize="15sp"
+            android:text="/"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B4"
+            android:layout_margin="5dp"
+
+            android:textSize="15sp"
+            android:text="4"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B5"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="5"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B6"
+            android:layout_margin="5dp"
+
+            android:textSize="15sp"
+            android:text="6"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/mul"
+            android:layout_margin="5dp"
+
+            android:textSize="15sp"
+            android:text="*"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B1"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="1"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B2"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B3"
+            android:textSize="15sp"
+            android:text="3"
+            android:layout_margin="5dp"
+
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/sub"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/B0"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="0"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+        <Button
+            android:id="@+id/Bdot"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="."
+            android:layout_gravity="fill_horizontal"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/add"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1">
+        </Button>
+        <Button
+            android:id="@+id/Breset"
+            android:textSize="15sp"
+            android:layout_columnSpan="4"
+            android:layout_margin="5dp"
+
+            android:text="RESET"
+            android:layout_gravity="fill_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+    </GridLayout>
+
+
+</LinearLayout>

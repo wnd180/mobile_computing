@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">mid_exam</string>
+    <string name="results"> %s </string>
+</resources>
