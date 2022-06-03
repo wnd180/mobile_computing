@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         1. [Android Studio] Bitmap을 File로 변환하기: https://crazykim2.tistory.com/445 [차근차근 개발일기+일상]
         2. [Android Studio] 비트맵 사진을 갤러리에 저장하기 코틀린 Bitmap To Gallery Kotlin: https://devsmin.tistory.com/m/27
          */
+        
     }
 
     /** 이미지 저장 */
