@@ -2,30 +2,18 @@ package com.example.pdiary
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.DisplayMetrics
-import android.util.Log
-import android.view.Gravity
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.marginRight
 import com.example.pdiary.databinding.ActivityMainBinding
-import com.kyanogen.signatureview.SignatureView
 import java.io.File
 import java.io.FileOutputStream
-
 
 /** MainActivity.kt*/
 class MainActivity : AppCompatActivity() {
@@ -35,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setTitle("나만의 그림 일기장");
+        setTitle("그림 일기장");
         /** SignPad layout 생성*/
         initSignaturePad()
     }
@@ -77,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         1. [Android Studio] Bitmap을 File로 변환하기: https://crazykim2.tistory.com/445 [차근차근 개발일기+일상]
         2. [Android Studio] 비트맵 사진을 갤러리에 저장하기 코틀린 Bitmap To Gallery Kotlin: https://devsmin.tistory.com/m/27
          */
-        
+
     }
 
     /** 이미지 저장 */
