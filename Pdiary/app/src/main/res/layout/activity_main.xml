@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,14 +26,14 @@
         android:layout_margin="5dp"
         android:gravity="center"
         android:text="Clear" />
-    <EditText
-        android:id="@+id/input_title"
+    <TextView
+        android:id="@+id/input_date"
         android:layout_width="match_parent"
         android:layout_margin="5dp"
         android:gravity="center"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="제목을 입력해 주세요" />
+        android:hint="날짜 표시란" />
 
     <EditText
         android:id="@+id/input_text"

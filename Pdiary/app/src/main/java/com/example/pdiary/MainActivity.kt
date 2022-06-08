@@ -1,12 +1,14 @@
 package com.example.pdiary
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -15,16 +17,16 @@ import com.example.pdiary.databinding.ActivityMainBinding
 import java.io.File
 import java.io.FileOutputStream
 
-/** MainActivity.kt*/
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-
+    var recievedMessage : String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setTitle("그림 일기장");
-        /** SignPad layout 생성*/
+        title = "그림 일기장"
+        recievedMessage = intent.getStringExtra("message")
+        binding.inputDate.text = "선택한 날짜 : "+recievedMessage
         initSignaturePad()
     }
 
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         /** 저장 */
         binding.bSave.setOnClickListener {
+            var str = binding.inputText.text.toString().trim()
             if (!binding.signaturePad.isBitmapEmpty) {
                 /** 권한 체크 */
                 if (!checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE) || !checkPermission(
@@ -46,27 +49,34 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 /** 그림 저장 */
-                if (!imageExternalSave(
-                        binding.signaturePad.signatureBitmap,
-                        this.getString(R.string.app_name)
-                    )
-                ) {
-                    Toast.makeText(this, "사인패드 저장에 실패하였습니다", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "사인패드를 갤러리에 저장하였습니다.", Toast.LENGTH_SHORT).show()
+                if (!imageExternalSave(binding.signaturePad.signatureBitmap, this.getString(R.string.app_name))) {
+                    Toast.makeText(this, "그림 일기장 저장을 실패하였습니다", Toast.LENGTH_SHORT).show()
+                } else if (str != "") {
+                    openFileOutput(recievedMessage+".txt",Context.MODE_PRIVATE).use {
+                        it.write(str.toByteArray())
+                    }
+                    Toast.makeText(this, "그림 일기장을 저장하였습니다.", Toast.LENGTH_SHORT).show()
+                    val myIntent = Intent(this,listdiary::class.java)
+                    startActivity(myIntent)
+                }else{
+                    Toast.makeText(this,"글씨가 비어있습니다.",Toast.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(this, "사인패드가 비어있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "그림이 비어있습니다.", Toast.LENGTH_SHORT).show()
             }
         }
-
-        /**
-         * 관련자료
-        1. [Android Studio] Bitmap을 File로 변환하기: https://crazykim2.tistory.com/445 [차근차근 개발일기+일상]
-        2. [Android Studio] 비트맵 사진을 갤러리에 저장하기 코틀린 Bitmap To Gallery Kotlin: https://devsmin.tistory.com/m/27
-         */
-
     }
+    /** 다이어리 텍스트 저장*/
+//    fun readDiary(fName: String) : String?{
+//        var diaryStr : String? = null
+//        try {
+//            openFileInput(fName).bufferedReader().forEachLine {
+//                if(diaryStr==null){diaryStr=it}
+//                else{diaryStr += "\n"+it}
+//                Log.d("TAG",diaryStr!!)
+//
+//        }
+//    }
 
     /** 이미지 저장 */
     private fun imageExternalSave(bitmap: Bitmap, path: String): Boolean {
@@ -77,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
                     .toString()
             val dirName = "/" + path
-            val fileName = System.currentTimeMillis().toString() + ".png"
+            val fileName = recievedMessage + ".png"
             val savePath = File(rootPath + dirName)
             savePath.mkdirs()
 

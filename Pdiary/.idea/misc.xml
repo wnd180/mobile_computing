@@ -5,6 +5,8 @@
       <map>
         <entry key="../../../../../../../../../layout/custom_preview.xml" value="0.1519756838905775" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/diarylist.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/layout/diaryview.xml" value="0.2864583333333333" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.2554347826086957" />
       </map>
     </option>
