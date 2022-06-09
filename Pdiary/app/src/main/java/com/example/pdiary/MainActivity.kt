@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         title = "그림 일기장"
         recievedMessage = intent.getStringExtra("message")
-        binding.inputDate.text = "선택한 날짜 : "+recievedMessage
+        binding.inputDate.text = "선택한 날짜 : "+ recievedMessage.toString().substring(0,4)+"년 "+
+                recievedMessage.toString().substring(4,6)+"월 "+
+                recievedMessage.toString().substring(6,8)+"일"
         initSignaturePad()
     }
 

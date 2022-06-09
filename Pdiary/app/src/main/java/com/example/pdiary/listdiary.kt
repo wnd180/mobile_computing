@@ -52,7 +52,7 @@ class listdiary : AppCompatActivity() {
             val inputMsg = putmsg
 
             // 이동할 액티비티 경로 잡기
-            val myIntent = Intent(this, MainActivity::class.java)
+            val myIntent = Intent(this, diaryactivity::class.java)
 
             // 가지고 갈 메시지를 putExtra에 담기
             myIntent.putExtra("message", inputMsg)

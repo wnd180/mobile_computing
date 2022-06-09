@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Pdiary"
         tools:targetApi="31">
         <activity android:name=".MainActivity"/>
-<!--        <activity android:name=""-->
+        <activity android:name=".diaryactivity"/>
         <activity android:name=".listdiary"
             android:exported="true">
             <intent-filter>
